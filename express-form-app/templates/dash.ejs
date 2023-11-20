@@ -1,0 +1,24 @@
+<%- include('blocks/header') -%>
+
+    <main>
+        <div>
+            <h2>Привет тебе, <%= user.login %>!</h2>
+            <form action="/user-update" method="post">
+                <input type="text" value="<%= user.login ? user.login : '' %>" name="login" placeholder="Введите логин">
+                <input type="text" value="<%= user.name ? user.name : '' %>" name="name" placeholder="Введите имя">
+                <input type="email" value="<%= user.email ? user.email : '' %>" name="email"
+                    placeholder="Введите email">
+                <% if(error !='' ) { %>
+                    <div style="color: red; font-size: 12px;">
+                        <%= error %>
+                    </div>
+                    <% } %>
+                        <button type="submit">Обновить</button>
+            </form>
+        </div>
+        <div>
+            <a href="/logout" class="logout">Выйти из кабинета</a>
+        </div>
+    </main>
+
+    <%- include('blocks/footer') -%>

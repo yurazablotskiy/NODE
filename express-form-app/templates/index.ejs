@@ -1,0 +1,24 @@
+<%- include('blocks/header') -%>
+
+    <h1>Node JS is cool!</h1>
+    <p>Name: <b>
+            <%= name %>
+        </b></p>
+    <p>ID: <b>
+            <%= id %>
+        </b></p>
+
+    <% if (id> 3) { %>
+        <h2>
+            <%= name %>
+        </h2>
+        <% } else { %>
+            <ul>
+                <% hobby.forEach(function(el){ %>
+                    <li>
+                        <%= el %>
+                    </li>
+                    <% }); %>
+            </ul>
+            <% } %>
+                <%- include('blocks/footer') -%>
